@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaarthiPath - Personalized Mentorship & Career Roadmaps</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1b1e59',
+                        secondary: '#a6aaed', // Teal accent color
+                        accent: '#a6aaed', // Purple accent
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="overflow-x-hidden w-full max-w-full">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-primary/90 backdrop-blur-sm">
+        <div class="w-full px-4 sm:px-6 lg:px-8 mx-auto">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl text-white font-poppins">SaarthiPath</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#how-it-works"
+                        class="nav-link text-gray-300 hover:text-secondary transition-colors duration-300">How It
+                        Works</a>
+                    <a href="#mentorship"
+                        class="nav-link text-gray-300 hover:text-secondary transition-colors duration-300">Mentorship</a>
+                    <a href="#experts"
+                        class="nav-link text-gray-300 hover:text-secondary transition-colors duration-300">Experts</a>
+                    <a href="#testimonials"
+                        class="nav-link text-gray-300 hover:text-secondary transition-colors duration-300">Testimonials</a>
+                    <a href="#communities"
+                        class="nav-link text-gray-300 hover:text-secondary transition-colors duration-300">Communities</a>
+                    <a href="#contact"
+                        class="bg-secondary hover:bg-secondary/90 text-primary font-medium px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105">Join
+                        Waitlist</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#how-it-works"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">How It Works</a>
+                    <a href="#mentorship"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Mentorship</a>
+                    <a href="#experts"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Experts</a>
+                    <a href="#testimonials"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Testimonials</a>
+                    <a href="#communities"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Communities</a>
+                    <a href="#contact"
+                        class="bg-secondary hover:bg-secondary/90 text-primary font-medium px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105 inline-block text-center">Join
+                        Waitlist</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section-height flex items-center justify-center relative overflow-hidden">
+        <!-- Professional background with pattern overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/95 to-primary z-0"></div>
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-10">
+        </div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/90 z-0"></div>
+
+        <!-- Subtle accent elements -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-secondary/10 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full filter blur-3xl"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto pt-32 md:pt-20" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Announcement tagline -->
+                <div
+                    class="bg-white/5 backdrop-blur-sm py-2 px-4 rounded-full inline-flex items-center mb-8 border border-white/10 mx-auto">
+                    <span class="bg-secondary/20 text-secondary text-xs px-2 py-1 rounded-full mr-2">NEW</span>
+                    <span class="text-sm text-gray-300">Applications open for Summer 2025 Mentorship Cohort</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 font-poppins leading-tight hero-glow">
+                    Empower Your College Journey <span class="gradient-text">Like Never Before</span>
+                </h1>
+                <!-- <p class="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto">
+                    Personalized roadmaps, real-world mentors, and a path just for you.
+                </p> -->
+                <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Join India's premier tech mentorship platform connecting students with industry experts for
+                    personalized career guidance.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact"
+                        class="bg-secondary hover:bg-secondary/90 text-primary font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-lg">
+                        Join the Waitlist
+                    </a>
+                    <button id="play-video-btn"
+                        class="border border-white/30 hover:border-secondary text-white font-medium px-8 py-3 rounded-full transition-all duration-300 hover:bg-white/10 text-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-play text-secondary"></i> Watch Video
+                    </button>
+                </div>
+
+                <!-- Stats boxes in a grid -->
+                <div class="mt-12 mb-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-secondary/30 transition-all duration-300 bg-gradient-to-br from-secondary/5 to-accent/5 text-center">
+                        <div class="text-secondary text-2xl mb-2"><i class="fas fa-user-friends"></i></div>
+                        <div class="text-2xl font-bold">500+</div>
+                        <div class="text-gray-400 text-sm">Students Mentored</div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-secondary/30 transition-all duration-300 bg-gradient-to-br from-secondary/5 to-accent/5 text-center">
+                        <div class="text-secondary text-2xl mb-2"><i class="fas fa-briefcase"></i></div>
+                        <div class="text-2xl font-bold">50+</div>
+                        <div class="text-gray-400 text-sm">Industry Experts</div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-secondary/30 transition-all duration-300 bg-gradient-to-br from-secondary/5 to-accent/5 text-center">
+                        <div class="text-secondary text-2xl mb-2"><i class="fas fa-building"></i></div>
+                        <div class="text-2xl font-bold">100+</div>
+                        <div class="text-gray-400 text-sm">Partner Companies</div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-secondary/30 transition-all duration-300 bg-gradient-to-br from-secondary/5 to-accent/5 text-center">
+                        <div class="text-secondary text-2xl mb-2"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="text-2xl font-bold">90%</div>
+                        <div class="text-gray-400 text-sm">Placement Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 transform -translate-x-1/2 animate-bounce z-10 w-full text-center">
+            <a href="#how-it-works" class="text-white/70 hover:text-white inline-block">
+                <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section-height flex items-center bg-primary/95 relative pt-20 md:pt-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-poppins">How <span
+                        class="gradient-text">SaarthiPath</span> Works</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Your journey to career success in simple steps</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Step 1 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondary/30 transition-all duration-500">
+                        <i class="fas fa-user-edit text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">1. Create Your Profile</h3>
+                    <p class="text-gray-300 text-center">Tell us about your background, interests, and career
+                        aspirations so we can tailor your experience.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondary/30 transition-all duration-500">
+                        <i class="fas fa-route text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">2. Get Your Roadmap</h3>
+                    <p class="text-gray-300 text-center">Receive a personalized career roadmap with milestones, skills
+                        to develop, and resources to explore.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondary/30 transition-all duration-500">
+                        <i class="fas fa-users text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">3. Connect with Mentors</h3>
+                    <p class="text-gray-300 text-center">Book sessions with industry experts who can guide you, answer
+                        questions, and provide real-world insights.</p>
+                </div>
+            </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- Mentorship Section -->
+    <section id="mentorship" class="section-height flex items-center bg-primary/90 relative pt-20 md:pt-0">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 right-20 w-72 h-72 bg-accent/30 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-poppins">Mentorship <span
+                        class="gradient-text">Sessions</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Learn from the best in the industry through
+                    personalized guidance</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- 1:1 Sessions -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500"
+                    data-aos="fade-right">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">1:1 Sessions</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Personalized 45-minute video calls with industry experts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Tailored advice for your specific career questions and challenges</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Resume reviews and interview preparation with actionable feedback</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Follow-up resources and personalized next steps</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Group Sessions -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500"
+                    data-aos="fade-left">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Group Sessions</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Interactive workshops with 5-10 peers in similar career paths</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Industry deep-dives and trending technology discussions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Collaborative problem-solving and networking opportunities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Recorded sessions and community forum access</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#contact"
+                    class="bg-secondary hover:bg-secondary/90 text-primary font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 inline-block">
+                    Book Your First Session
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator mb-8"></div>
+
+    <!-- Industry Experts Section -->
+    <section id="experts" class="section-height flex items-center bg-primary/95 relative pt-12 md:pt-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-poppins">Industry <span
+                        class="gradient-text">Experts</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Learn from professionals who have walked the path
+                    before you</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Expert 1 -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative mb-6 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Priya Sharma"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent p-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-white hover:text-secondary transition-colors">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-secondary transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Priya Sharma</h3>
+                    <p class="text-secondary mb-2">Senior Product Manager, Google</p>
+                    <p class="text-gray-300 text-sm mb-4">10+ years experience in tech product management</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Product Strategy</span>
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">UX Design</span>
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Tech Leadership</span>
+                    </div>
+                </div>
+
+                <!-- Expert 2 -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative mb-6 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Rahul Mehta"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent p-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-white hover:text-secondary transition-colors">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-secondary transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Rahul Mehta</h3>
+                    <p class="text-secondary mb-2">Engineering Director, Microsoft</p>
+                    <p class="text-gray-300 text-sm mb-4">15+ years in software development and team leadership</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Cloud Architecture</span>
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">AI/ML</span>
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Engineering Management</span>
+                    </div>
+                </div>
+
+                <!-- Expert 3 -->
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative mb-6 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Ananya Patel"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent p-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-white hover:text-secondary transition-colors">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-secondary transition-colors">
+                                    <i class="fab fa-medium"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Ananya Patel</h3>
+                    <p class="text-secondary mb-2">Data Science Lead, Amazon</p>
+                    <p class="text-gray-300 text-sm mb-4">8+ years specializing in data analytics and machine learning
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Data Science</span>
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-white/10 text-xs px-3 py-1 rounded-full">Big Data</span>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            <div class="flex justify-center text-center mt-12 mb-8 w-full" data-aos="fade-up">
+                <a href="#contact"
+                    class="border border-white/30 hover:border-white text-white font-medium px-8 py-3 rounded-full transition-all duration-300 hover:bg-white/10">
+                    View All Mentors
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator mb-8"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-height flex items-center bg-primary/90 relative pt-12 md:pt-0">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute bottom-20 left-20 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-poppins">Student <span
+                        class="gradient-text">Testimonials</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Hear from students who transformed their careers with
+                    SaarthiPath</p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" data-aos="fade-up">
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500">
+                    <div class="text-secondary mb-4">
+                        <i class="fas fa-quote-left text-3xl"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"SaarthiPath helped me navigate the complex world of tech careers. My
+                        mentor guided me through interview preparation, and I landed my dream job at a top tech
+                        company!"</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                            alt="Neha Singh" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Neha Singh</h4>
+                            <p class="text-gray-400 text-sm">B.Tech, IIT Delhi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500">
+                    <div class="text-secondary mb-4">
+                        <i class="fas fa-quote-left text-3xl"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The personalized roadmap was a game-changer for me. It helped me
+                        focus on the right skills and projects, which made my resume stand out to recruiters."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                            alt="Arjun Kapoor" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Arjun Kapoor</h4>
+                            <p class="text-gray-400 text-sm">MCA, NIT Trichy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                    class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500">
+                    <div class="text-secondary mb-4">
+                        <i class="fas fa-quote-left text-3xl"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"As a non-CS student, I was struggling to break into tech. The group
+                        sessions and community at SaarthiPath gave me the confidence and knowledge to make the
+                        transition."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                            alt="Meera Reddy" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Meera Reddy</h4>
+                            <p class="text-gray-400 text-sm">B.Sc Physics, Delhi University</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- Our Mission Section -->
+    <section id="mission" class="section-height flex items-center bg-primary/95 relative pt-20 md:pt-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 font-poppins">Our <span
+                            class="gradient-text">Mission</span></h2>
+                    <p class="text-xl text-gray-300 mb-8">We believe every student deserves access to personalized
+                        career guidance that goes beyond generic advice.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-exclamation-circle text-xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">The Problem</h3>
+                                <p class="text-gray-300">Students often struggle with career decisions due to limited
+                                    exposure, generic advice, and lack of industry connections.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-lightbulb text-xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Our Vision</h3>
+                                <p class="text-gray-300">To create a world where every student has access to
+                                    personalized career guidance and mentorship from industry experts.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-bullseye text-xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Long-term Goals</h3>
+                                <p class="text-gray-300">To empower 1 million students with personalized career roadmaps
+                                    and connect them with 10,000+ industry mentors by 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative" data-aos="fade-left">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-secondary/20 rounded-full filter blur-3xl"></div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/20 rounded-full filter blur-3xl">
+                    </div>
+                    <div
+                        class="relative bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Students collaborating" class="w-full h-auto rounded-lg mb-8">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <h3 class="text-4xl font-bold text-secondary mb-2">500+</h3>
+                                <p class="text-gray-300">Students Mentored</p>
+                            </div>
+                            <div>
+                                <h3 class="text-4xl font-bold text-secondary mb-2">50+</h3>
+                                <p class="text-gray-300">Industry Experts</p>
+                            </div>
+                            <div>
+                                <h3 class="text-4xl font-bold text-secondary mb-2">85%</h3>
+                                <p class="text-gray-300">Placement Rate</p>
+                            </div>
+                            <div>
+                                <h3 class="text-4xl font-bold text-secondary mb-2">20+</h3>
+                                <p class="text-gray-300">Partner Companies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-height flex items-center bg-primary/90 relative pt-20 md:pt-0">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-accent/30 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-poppins">Frequently Asked <span
+                        class="gradient-text">Questions</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Find answers to common questions about SaarthiPath
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6">
+                    <button
+                        class="faq-toggle flex justify-between items-center w-full bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-300 text-left">
+                        <h3 class="text-xl font-bold">How does the mentorship program work?</h3>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-content hidden bg-white/5 backdrop-blur-sm p-8 rounded-b-xl border-t-0 border border-white/10 mt-1">
+                        <p class="text-gray-300 px-2">Our mentorship program connects you with industry professionals
+                            who
+                            provide guidance through 1:1 video calls and group sessions. After signing up, you'll
+                            complete a profile to help us match you with mentors who align with your career goals. You
+                            can then book sessions directly through our platform.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="mb-6">
+                    <button
+                        class="faq-toggle flex justify-between items-center w-full bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-300 text-left">
+                        <h3 class="text-xl font-bold">What makes SaarthiPath different from other career platforms?</h3>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-content hidden bg-white/5 backdrop-blur-sm p-8 rounded-b-xl border-t-0 border border-white/10 mt-1">
+                        <p class="text-gray-300 px-2">SaarthiPath stands out by offering truly personalized career
+                            roadmaps
+                            based on your unique background, skills, and goals. Unlike generic advice platforms, we
+                            connect you with real industry professionals who have walked the path you're interested in.
+                            Our approach combines AI-powered roadmapping with human expertise for the most relevant
+                            guidance.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="mb-6">
+                    <button
+                        class="faq-toggle flex justify-between items-center w-full bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-300 text-left">
+                        <h3 class="text-xl font-bold">How much does SaarthiPath cost?</h3>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-content hidden bg-white/5 backdrop-blur-sm p-8 rounded-b-xl border-t-0 border border-white/10 mt-1">
+                        <p class="text-gray-300 px-2">We offer flexible pricing plans to suit different needs. Our basic
+                            plan
+                            starts at ₹999/month and includes a personalized roadmap and access to group sessions.
+                            Premium plans with 1:1 mentorship sessions start at ₹2499/month. We also offer special
+                            discounts for students from tier 2/3 colleges and those from economically disadvantaged
+                            backgrounds.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="mb-6">
+                    <button
+                        class="faq-toggle flex justify-between items-center w-full bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-300 text-left">
+                        <h3 class="text-xl font-bold">Can I become a mentor on SaarthiPath?</h3>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-content hidden bg-white/5 backdrop-blur-sm p-8 rounded-b-xl border-t-0 border border-white/10 mt-1">
+                        <p class="text-gray-300 px-2">Yes! We're always looking for experienced professionals to join
+                            our
+                            mentor network. You'll need at least 3+ years of industry experience and a passion for
+                            helping students. Apply through our website, and our team will review your application and
+                            schedule an interview to discuss the mentorship opportunity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- Join Our Communities Section -->
+    <section id="communities" class="section-height flex items-center bg-primary/90 relative pt-20 md:pt-0">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 right-20 w-72 h-72 bg-accent/30 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-poppins">Join Our <span
+                        class="gradient-text">Communities</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Connect with like-minded students and mentors in our
+                    growing communities</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- WhatsApp Community -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondary/30 transition-all duration-500">
+                        <i class="fab fa-whatsapp text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">WhatsApp Group</h3>
+                    <p class="text-gray-300 text-center mb-6">Join our WhatsApp community for quick updates, resources
+                        sharing, and connecting with peers.</p>
+                    <div class="text-center">
+                        <a href="#"
+                            class="bg-[#25D366]/20 hover:bg-[#25D366]/30 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Discord Community (Coming Soon) -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondary/30 transition-all duration-500">
+                        <i class="fab fa-discord text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Discord Server</h3>
+                    <p class="text-gray-300 text-center mb-6">Our Discord server is coming soon! Join for topic-based
+                        discussions, events, and mentor office hours.</p>
+                    <div class="text-center">
+                        <button
+                            class="bg-[#5865F2]/20 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2 opacity-70 cursor-not-allowed">
+                            <i class="fab fa-discord"></i> Coming Soon
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Telegram Channel (Coming Soon) -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondary/30 transition-all duration-500">
+                        <i class="fab fa-telegram-plane text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Telegram Channel</h3>
+                    <p class="text-gray-300 text-center mb-6">Our Telegram channel is coming soon! Subscribe for career
+                        resources, job alerts, and learning materials.</p>
+                    <div class="text-center">
+                        <button
+                            class="bg-[#0088cc]/20 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2 opacity-70 cursor-not-allowed">
+                            <i class="fab fa-telegram-plane"></i> Coming Soon
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-height flex items-center bg-primary/95 relative pt-20 md:pt-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 font-poppins">Get in <span
+                            class="gradient-text">Touch</span></h2>
+                    <p class="text-xl text-gray-300 mb-8">Have questions or want to learn more? Reach out to our team.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div
+                                class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-envelope text-xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Email Us</h3>
+                                <p class="text-gray-300">support@saarthipath.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-phone text-xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Call Us</h3>
+                                <p class="text-gray-300">+91 9876543210</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Visit Us</h3>
+                                <p class="text-gray-300">91springboard, Koramangala, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <form
+                        class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-secondary/50 transition-all duration-500">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name"
+                                class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors duration-300"
+                                placeholder="Enter your name">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email"
+                                class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors duration-300"
+                                placeholder="Enter your email">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors duration-300"
+                                placeholder="Enter your message"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-secondary hover:bg-secondary/90 text-primary font-medium py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.02]">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-20 bg-primary/90 relative">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute bottom-0 right-0 w-72 h-72 bg-secondary/30 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 font-poppins">Join Our <span
+                        class="gradient-text">Waitlist</span></h2>
+                <p class="text-xl text-gray-300 mb-8">Be the first to know when we launch and get early access to our
+                    platform.</p>
+
+                <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                    <input type="email"
+                        class="flex-grow bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors duration-300"
+                        placeholder="Enter your email address">
+                    <button type="submit"
+                        class="bg-secondary hover:bg-secondary/90 text-primary font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">Join
+                        Waitlist</button>
+                </form>
+
+                <p class="text-gray-400 mt-4 text-sm">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary/95 py-12 border-t border-white/10 w-full">
+        <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="md:col-span-1">
+                    <a href="#" class="text-2xl font-bold text-white font-poppins mb-4 inline-block">Saarthi<span
+                            class="gradient-text">Path</span></a>
+                    <p class="text-gray-400 mb-6">Personalized mentorship and career roadmaps for students.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                        </li>
+                        <li><a href="#how-it-works"
+                                class="text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+                        </li>
+                        <li><a href="#mentorship"
+                                class="text-gray-400 hover:text-white transition-colors duration-300">Mentorship</a>
+                        </li>
+                        <li><a href="#experts"
+                                class="text-gray-400 hover:text-white transition-colors duration-300">Experts</a></li>
+                        <li><a href="#testimonials"
+                                class="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Career
+                                Resources</a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-white transition-colors duration-300">Webinars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Success
+                                Stories</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors duration-300">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of
+                                Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy
+                                Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie
+                                Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Refund
+                                Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 SaarthiPath. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-container">
+            <div class="close-video" id="close-video">
+                <i class="fas fa-times"></i>
+            </div>
+            <iframe id="youtube-iframe" width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
